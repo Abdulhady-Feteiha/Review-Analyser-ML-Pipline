@@ -1,0 +1,23 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: review-analyser-app-deployment
+  labels:
+    app: review-analyser-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: review-analyser-app
+  template:
+    metadata:
+      labels:
+        app: review-analyser-app
+    spec:
+      containers:
+      - name: review-analyser-app
+        image: abfeteiha/review-analyser
+        ports:
+        - containerPort: 1234
+
