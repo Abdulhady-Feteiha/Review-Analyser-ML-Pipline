@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: simple-app-service
+spec:
+  selector:
+    app: simple-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
