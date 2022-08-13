@@ -18,7 +18,6 @@ word_index = imdb.get_word_index()
 nlp_model = load_model('imdb_nlp.h5')
 # method that does the prediction – we will call this later
 def predict_sentiment(my_test):
-    print('looooooolclear')
     # tokenize the sentence
     word_sequence = text_to_word_sequence(my_test)
     # create a blank sequence of integers
@@ -46,11 +45,9 @@ htmlDefault = '<h4>Simple Python NLP demo</h4><b>Type some text to analyze its s
 @app.route('/process')
 def process():
     # define returning HTML
-    print('ok')
     retHTML = ''
     # get the HTTP parameter by name 'text_input'
     in_text = request.args.get('text_input')
-    print(in_text)
     # if input is provided process else show default page
     if in_text is not None:
         # first show what was typed
